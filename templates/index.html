@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+
+<body>
+    <div class="intro">
+        <h1 class="title">GALLERY</h1>
+        <form method="post" enctype="multipart/form-data" id="img_upload">
+            {% csrf_token %}
+            <div class="upload">
+                <label id="label">Upload Image</label>
+            <input id="file" type="file" name="img" accept="image/*" required/>
+            
+            </div>
+            <button id="btn">Upload</button>
+        </form>
+    </div>
+    
+    <div class="img_div">
+        {% for img in img_lst %}
+        <a href="/{{img}}">
+            <img class="gallery_img" src="https://imageapp123.s3.amazonaws.com/{{img}}" />
+        </a>
+        {% endfor %}
+    </div>
+</body>
+
+</html>
