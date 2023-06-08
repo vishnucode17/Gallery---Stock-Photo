@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="/upload">Upload</a></li>
+            <li><a href="/account">My Account</a></li>
+            <li><a href="/account/logout">Logout</a></li>
+            {% else %}
+            <li><a href="/account/login">Login</a></li>
+            <li><a href="/account/register">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+            background-color: black;
+        }
+        ul{
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            gap: 40px;
+            padding: 30px;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            color: whitesmoke;
+            font-size: 18px;
+            text-decoration: none;
+        }
+    </style>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

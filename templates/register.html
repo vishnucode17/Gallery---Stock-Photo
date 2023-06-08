@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'auth.css' %}">
+<div class="login_view">
+    <div class="auth_main_div">
+        <h1 class="auth-head">REGISTER</h1>
+        <p class="messge_alert">
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+        </p>
+        <form method="post" class="auth-form">
+            {% csrf_token %}
+            <input type="text" placeholder="Username" required name="username">
+            <input type="text" placeholder="First Name" required name="first_name">
+            <input type="text" placeholder="Last Name" required name="last_name">
+            <input type="email" placeholder="Email" required name="email">
+            <input type="password" placeholder="Password" required name="password">
+            <input type="password" placeholder="Re-enter Password" required name="vpassword">
+            <label for="terms">I agree terms and conditions</label>
+            <input type="checkbox" name="terms" id="terms">
+            <button>Register</button>
+            <a href="/account/login">Already Have an account?</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

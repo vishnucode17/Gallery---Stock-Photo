@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'upload.css' %}">
+<div class="upload_image">
+    <form method="post" enctype="multipart/form-data" id="img_upload">
+        {% csrf_token %}
+        <div class="upload">
+            <h1>UPLOAD</h1>
+            <input type="text" name="img_title" required placeholder="Image Name">
+            <textarea name="img_desc" cols="10" rows="5" placeholder="Say something about Image"></textarea>
+            <div>
+                <label id="label">Upload Image</label>
+                <input id="file" type="file" name="img" accept="image/png, image/jpeg" required />
+            </div>
+            <div>
+                <input type="checkbox" name="terms" id="terms" required>
+                <label for="terms">I agree terms and conditions</label>
+            </div>
+        </div>
+        <button id="btn">Upload</button>
+    </form>
+</div>
+{% endblock %}

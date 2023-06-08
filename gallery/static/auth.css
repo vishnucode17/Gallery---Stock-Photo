@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.auth_main_div{
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.auth-head{
+    font-family: 'Josefin Sans', sans-serif;
+    color: whitesmoke;
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+.auth-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+.auth-form input{
+    font-size: 18px;
+    font-family: 'Josefin Sans', sans-serif;
+    padding:8px 10px;
+    border: none;
+}
+.auth-form input:focus{
+    outline: none;
+}
+.auth-form button{
+    font-size: 18px;
+    padding: 8px;
+    font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
+    font-weight: bold;
+}
+.message_alert{
+    font-size: 18px;
+    color: red;
+    margin-bottom: 10px;
+}

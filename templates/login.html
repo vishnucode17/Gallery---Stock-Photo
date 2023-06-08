@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'auth.css' %}">
+<div class="login_view">
+    <div class="auth_main_div">
+        <h1 class="auth-head">LOGIN</h1>
+        <p class="message_alert">
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+        </p>
+        <form method="post" class="auth-form">
+            {% csrf_token %}
+            <input type="text" placeholder="Username" required name="username">
+            <input type="password" placeholder="Password" required name="password">
+            <button>Login</button>
+            <a href="/account/register">Don't have an account?</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
